@@ -94,15 +94,8 @@ static DEFAULT_DIGITS: u8 = 0;
 
 #[get("/passphrase?<params>")]
 fn phrase_params(params: PhraseParams) -> String {
-    let num_words = match params.length {
-        Some(x) => x,
-        None => DEFAULT_LENGTH
-    };
-
-    let num_digits = match params.digits {
-        Some(y) => y,
-        None => DEFAULT_DIGITS
-    };
+    let num_words = params.length.unwrap_or(DEFAULT_LENGTH);
+    let num_digits = params.digits.unwrap_or(DEFAULT_DIGITS);
 
     passphrase_gen(num_words, num_digits)
 }

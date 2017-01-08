@@ -1,5 +1,6 @@
 # A Rocket experiment
 
-The code's probably terrible.
+Warning: I am a complete newb to both Rust and webdev, so this code is probably
+terrible.
 
 See [this blogpost](https://skinkade.github.io/rocket-passphrase-demo/).

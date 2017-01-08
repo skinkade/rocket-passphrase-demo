@@ -1,0 +1,15 @@
+[package]
+name = "rocket-passphrase-demo"
+version = "0.1.0"
+authors = ["Shawn Kinkade"]
+
+[dependencies]
+rand = "*"
+rocket = "0.1.4"
+rocket_codegen = "0.1.4"
+lazy_static = "*"
+
+[dependencies.rocket_contrib]
+version = "*"
+default-features = false
+features = ["handlebars_templates", "tera_templates"]

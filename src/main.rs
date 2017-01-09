@@ -21,10 +21,7 @@ lazy_static! {
      * to only at initial runtime, I mostly did this just to see if I could :)
      */
     static ref CHACHA_MUTEX: Mutex<ChaChaRng> = {
-        let mut os_csprng = match OsRng::new() {
-            Ok(g) => g,
-            Err(e) => panic!("{}", e),
-        };
+        let mut os_csprng = OsRng::new().unwrap();
 
         // 256-bit seed
         let mut seed = [0u32; 8];

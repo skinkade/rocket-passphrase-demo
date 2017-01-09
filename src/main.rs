@@ -59,7 +59,8 @@ fn passphrase_gen(num_words: u8, num_digits: u8) -> String {
     let mut passphrase: String;
 
     // Always at least one word
-    if num_words == 0 {
+    // Don't both allocating vec for just one string
+    if num_words <= 1 {
         let word = WORDLIST[csprng.gen_range(0, *WORDLIST_LEN)];
         passphrase = capitalize(word);
     } else {
